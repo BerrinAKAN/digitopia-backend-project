@@ -61,9 +61,6 @@ public class User implements Serializable {
     @Column(name = "updated_by")
     private String updatedBy;
 
-    /*@OneToMany
-    @JoinColumn(name = "user_organization_id")
-    List<Organization> organizations;*/
 
     @ManyToMany(
             cascade = CascadeType.ALL,
