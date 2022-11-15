@@ -22,9 +22,9 @@ public interface UserService {
 
     List<Organization> getAllOrganizationsForUser(Long userId);
 
-    User searchByEmail(String email);
+    List<User> searchByEmail(String email);
 
-    List<User> searchByNormalizedName(UserDto normalizedName);
+    List<User> searchByNormalizedName(String normalizedName);
 
 
 }
