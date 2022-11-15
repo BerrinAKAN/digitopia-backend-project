@@ -70,13 +70,15 @@ public class UserServiceImpl implements UserService {
         return user.getOrganizations().stream().collect(Collectors.toList());
     }
 
-    @Override
-    public User searchByEmail(String email) {
-        return null;
+      @Override
+    public List<User> searchByEmail(String email) {
+        List<User> emails = userRepository.searchEmail("email");
+        return emails;
     }
 
     @Override
-    public List<User> searchByNormalizedName(UserDto normalizedName) {
-        return null;
+    public List<User> searchByNormalizedName(String normalizedName) {
+        List<User> getNormalizedName = userRepository.searchNormalizedName("normalizedName");
+        return getNormalizedName;
     }
 }
