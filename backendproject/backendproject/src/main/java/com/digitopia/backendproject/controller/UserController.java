@@ -37,6 +37,16 @@ public class UserController {
         return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
 
     }
+    
+     @GetMapping("/searchEmail")
+    public ResponseEntity<List<User>> searchEmails(@RequestParam("email") String email){
+        return  ResponseEntity.ok(userService.searchByEmail(email));
+    }
+
+    @GetMapping("/searchNormalizedName")
+    public ResponseEntity<List<User>> searchNormalizedName(@RequestParam("normalizedName") String normalizedName){
+        return ResponseEntity.ok(userService.searchByNormalizedName(normalizedName));
+    }
 
 
 }
